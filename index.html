@@ -67,18 +67,15 @@
     overflow-y: auto;
     overflow-x: hidden;
   }
-
   .screen.active {
     opacity: 1;
     pointer-events: auto;
     transform: translateX(0);
   }
-
   .screen.slide-left {
     transform: translateX(-30px);
   }
 
-  /* ========== STATUS BAR ========== */
   .status-bar {
     display: flex;
     justify-content: space-between;
@@ -90,7 +87,6 @@
     flex-shrink: 0;
   }
 
-  /* ========== TOP NAV ========== */
   .top-nav {
     display: flex;
     align-items: center;
@@ -98,7 +94,6 @@
     padding: 8px 20px 12px;
     flex-shrink: 0;
   }
-
   .top-nav .logo {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 20px;
@@ -106,7 +101,6 @@
     color: var(--text);
     letter-spacing: -0.5px;
   }
-
   .top-nav .logo span { color: var(--accent); }
 
   .icon-btn {
@@ -122,12 +116,9 @@
     color: var(--text);
     transition: all 0.2s;
   }
-
   .icon-btn:hover { background: var(--surface-2); border-color: var(--accent); }
-
   .icon-btn svg { width: 20px; height: 20px; }
 
-  /* ========== SEARCH BAR ========== */
   .search-bar {
     margin: 0 20px 12px;
     background: var(--surface);
@@ -140,14 +131,10 @@
     cursor: pointer;
     transition: border-color 0.2s;
   }
-
   .search-bar:hover { border-color: var(--accent); }
-
   .search-bar .placeholder { color: var(--text-muted); font-size: 15px; }
-
   .search-bar svg { color: var(--text-muted); width: 18px; height: 18px; flex-shrink: 0; }
 
-  /* ========== MAP AREA ========== */
   .map-area {
     flex: 1;
     position: relative;
@@ -157,14 +144,11 @@
     overflow: hidden;
     min-height: 0;
   }
-
   .map-canvas {
     width: 100%;
     height: 100%;
     position: relative;
   }
-
-  /* Fake map grid */
   .map-grid {
     position: absolute;
     inset: 0;
@@ -174,16 +158,13 @@
     background-size: 60px 60px;
     opacity: 0.4;
   }
-
   .map-road {
     position: absolute;
     background: var(--surface-2);
     border-radius: 2px;
   }
-
   .map-road.h { height: 4px; }
   .map-road.v { width: 4px; }
-
   .map-label {
     position: absolute;
     font-size: 10px;
@@ -191,7 +172,6 @@
     font-weight: 500;
     white-space: nowrap;
   }
-
   .map-pin {
     position: absolute;
     width: 32px;
@@ -205,14 +185,10 @@
     cursor: pointer;
     transition: transform 0.2s;
   }
-
   .map-pin:hover { transform: rotate(-45deg) scale(1.15); }
-
   .map-pin.user { background: #4a90d9; }
   .map-pin.obstruction { background: var(--warning); }
   .map-pin.danger { background: var(--danger); }
-  .map-pin.safe { background: var(--accent); }
-
   .map-pin svg {
     transform: rotate(45deg);
     width: 16px;
@@ -220,7 +196,6 @@
     color: #fff;
   }
 
-  /* ========== FAB ========== */
   .fab {
     position: absolute;
     bottom: 76px;
@@ -243,11 +218,9 @@
     z-index: 10;
     white-space: nowrap;
   }
-
   .fab:hover { transform: translateX(-50%) scale(1.05); box-shadow: 0 6px 28px rgba(255,71,87,0.5); }
   .fab svg { width: 18px; height: 18px; }
 
-  /* ========== BOTTOM NAV ========== */
   .bottom-nav {
     display: flex;
     justify-content: space-around;
@@ -257,7 +230,6 @@
     border-top: 1px solid var(--border);
     flex-shrink: 0;
   }
-
   .nav-item {
     display: flex;
     flex-direction: column;
@@ -272,13 +244,12 @@
     border: none;
     font-family: 'DM Sans', sans-serif;
   }
-
   .nav-item.active { color: var(--accent); }
   .nav-item:hover { color: var(--text); }
   .nav-item svg { width: 22px; height: 22px; }
   .nav-item span { font-size: 11px; font-weight: 600; }
 
-  /* ========== SIDEBAR ========== */
+  /* Sidebar */
   .sidebar-overlay {
     position: absolute;
     inset: 0;
@@ -288,9 +259,7 @@
     pointer-events: none;
     transition: opacity 0.3s;
   }
-
   .sidebar-overlay.open { opacity: 1; pointer-events: auto; }
-
   .sidebar {
     position: absolute;
     top: 0;
@@ -306,14 +275,11 @@
     padding-top: 60px;
     border-right: 1px solid var(--border);
   }
-
   .sidebar-overlay.open .sidebar { transform: translateX(0); }
-
   .sidebar-profile {
     padding: 20px 24px;
     border-bottom: 1px solid var(--border);
   }
-
   .sidebar-profile .avatar {
     width: 56px;
     height: 56px;
@@ -327,12 +293,9 @@
     color: #fff;
     margin-bottom: 12px;
   }
-
   .sidebar-profile .name { font-size: 17px; font-weight: 600; }
   .sidebar-profile .reports { font-size: 13px; color: var(--accent); margin-top: 4px; }
-
   .sidebar-menu { padding: 12px 0; flex: 1; }
-
   .sidebar-item {
     display: flex;
     align-items: center;
@@ -349,28 +312,232 @@
     text-align: left;
     font-family: 'DM Sans', sans-serif;
   }
-
   .sidebar-item:hover { background: var(--surface-2); }
-  .sidebar-item svg { width: 20px; height: 20px; color: var(--text-dim); }
+  .sidebar-item svg { width: 20px; height: 20px; color: var(--text-dim); flex-shrink: 0; }
 
-  /* ========== REPORT FORM ========== */
-  .form-screen {
-    padding: 0 20px;
+  /* Back button */
+  .back-btn {
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    font-family: 'DM Sans', sans-serif;
+  }
+  .back-btn svg { width: 24px; height: 24px; }
+
+  /* Generic page content */
+  .page-content {
     flex: 1;
     overflow-y: auto;
+    padding: 0 20px 30px;
   }
-
-  .form-header {
+  .page-title {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 22px;
     font-weight: 700;
     margin: 16px 0;
   }
 
-  .form-section {
-    margin-bottom: 20px;
+  /* Card styles */
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: var(--radius);
+    padding: 16px;
+    margin-bottom: 12px;
+  }
+  .card-title {
+    font-size: 13px;
+    font-weight: 600;
+    color: var(--text-dim);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: 12px;
   }
 
+  /* Toggle switch */
+  .toggle-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .toggle-row:last-child { border-bottom: none; }
+  .toggle-row .label { font-size: 15px; font-weight: 500; }
+  .toggle-row .sublabel { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  .toggle {
+    width: 48px;
+    height: 28px;
+    border-radius: 14px;
+    background: var(--surface-2);
+    border: 2px solid var(--border);
+    cursor: pointer;
+    position: relative;
+    transition: all 0.3s;
+    flex-shrink: 0;
+  }
+  .toggle.on { background: var(--accent); border-color: var(--accent); }
+  .toggle::after {
+    content: '';
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #fff;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s;
+  }
+  .toggle.on::after { transform: translateX(20px); }
+
+  /* Select dropdown */
+  .setting-select {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 8px 12px;
+    border-radius: 8px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+    flex-shrink: 0;
+  }
+
+  /* Profile screen */
+  .profile-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0 24px;
+  }
+  .profile-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 24px;
+    background: linear-gradient(135deg, var(--accent), #00b377);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 32px;
+    font-weight: 700;
+    color: #fff;
+    margin-bottom: 12px;
+  }
+  .profile-name {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+  }
+  .profile-email {
+    font-size: 14px;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+  .profile-stats {
+    display: flex;
+    gap: 20px;
+    margin-top: 20px;
+  }
+  .stat-box {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 16px 24px;
+    text-align: center;
+    flex: 1;
+  }
+  .stat-value {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--accent);
+  }
+  .stat-label {
+    font-size: 12px;
+    color: var(--text-dim);
+    margin-top: 4px;
+  }
+  .profile-field {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .profile-field:last-child { border-bottom: none; }
+  .profile-field .pf-label { font-size: 14px; color: var(--text-dim); }
+  .profile-field .pf-value { font-size: 15px; font-weight: 500; }
+
+  /* Reports list */
+  .report-list-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+  }
+  .report-list-item:last-child { border-bottom: none; }
+  .report-icon-circle {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    flex-shrink: 0;
+  }
+  .report-info { flex: 1; }
+  .report-info .ri-type { font-size: 15px; font-weight: 600; }
+  .report-info .ri-loc { font-size: 13px; color: var(--text-dim); margin-top: 2px; }
+  .report-info .ri-time { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
+  .report-status {
+    font-size: 11px;
+    padding: 4px 8px;
+    border-radius: 6px;
+    font-weight: 600;
+    flex-shrink: 0;
+    margin-top: 4px;
+  }
+  .report-status.active-status { background: rgba(0,214,143,0.15); color: var(--accent); }
+  .report-status.expired { background: rgba(136,153,170,0.15); color: var(--text-dim); }
+
+  /* Help screen */
+  .faq-item {
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
+  }
+  .faq-item:last-child { border-bottom: none; }
+  .faq-q {
+    font-size: 15px;
+    font-weight: 600;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .faq-q .arrow { color: var(--text-muted); transition: transform 0.3s; font-size: 18px; }
+  .faq-q .arrow.open { transform: rotate(180deg); }
+  .faq-a {
+    font-size: 14px;
+    color: var(--text-dim);
+    line-height: 1.5;
+    margin-top: 10px;
+    display: none;
+  }
+  .faq-a.open { display: block; }
+
+  /* ========== FORM ========== */
+  .form-screen { padding: 0 20px; flex: 1; overflow-y: auto; }
+  .form-header {
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 16px 0;
+  }
+  .form-section { margin-bottom: 20px; }
   .form-label {
     font-size: 13px;
     font-weight: 600;
@@ -379,7 +546,6 @@
     letter-spacing: 0.5px;
     margin-bottom: 10px;
   }
-
   .location-box {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -389,17 +555,10 @@
     align-items: center;
     gap: 10px;
   }
-
   .location-box svg { color: var(--accent); width: 18px; height: 18px; flex-shrink: 0; }
   .location-box .loc-text { font-size: 15px; font-weight: 500; }
   .location-box .loc-sub { font-size: 12px; color: var(--text-muted); margin-top: 2px; }
-
-  .obstruction-options {
-    display: flex;
-    flex-direction: column;
-    gap: 8px;
-  }
-
+  .obstruction-options { display: flex; flex-direction: column; gap: 8px; }
   .obstruction-opt {
     background: var(--surface);
     border: 2px solid var(--border);
@@ -414,10 +573,8 @@
     font-size: 15px;
     color: var(--text);
   }
-
   .obstruction-opt:hover { border-color: var(--accent); }
   .obstruction-opt.selected { border-color: var(--accent); background: rgba(0,214,143,0.08); }
-
   .obstruction-opt .radio {
     width: 20px;
     height: 20px;
@@ -429,11 +586,7 @@
     justify-content: center;
     transition: all 0.2s;
   }
-
-  .obstruction-opt.selected .radio {
-    border-color: var(--accent);
-  }
-
+  .obstruction-opt.selected .radio { border-color: var(--accent); }
   .obstruction-opt.selected .radio::after {
     content: '';
     width: 10px;
@@ -441,18 +594,8 @@
     border-radius: 50%;
     background: var(--accent);
   }
-
-  .hint-text {
-    font-size: 12px;
-    color: var(--text-muted);
-    font-style: italic;
-  }
-
-  .optional-actions {
-    display: flex;
-    gap: 10px;
-  }
-
+  .hint-text { font-size: 12px; color: var(--text-muted); font-style: italic; }
+  .optional-actions { display: flex; gap: 10px; }
   .opt-btn {
     flex: 1;
     background: var(--surface);
@@ -469,10 +612,8 @@
     font-size: 13px;
     transition: all 0.2s;
   }
-
   .opt-btn:hover { border-color: var(--accent); color: var(--accent); }
   .opt-btn svg { width: 22px; height: 22px; }
-
   .submit-btn {
     width: 100%;
     padding: 16px;
@@ -487,10 +628,9 @@
     transition: all 0.2s;
     margin-bottom: 20px;
   }
-
   .submit-btn:hover { background: var(--accent-dim); transform: scale(1.02); }
 
-  /* ========== CONFIRMATION ========== */
+  /* Confirmation */
   .confirm-screen {
     flex: 1;
     display: flex;
@@ -500,7 +640,6 @@
     padding: 40px;
     text-align: center;
   }
-
   .confirm-check {
     width: 80px;
     height: 80px;
@@ -511,18 +650,14 @@
     justify-content: center;
     margin-bottom: 24px;
   }
-
   .confirm-check svg { width: 40px; height: 40px; color: var(--accent); }
-
   .confirm-title {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 24px;
     font-weight: 700;
     margin-bottom: 8px;
   }
-
   .confirm-sub { color: var(--text-dim); font-size: 15px; margin-bottom: 8px; }
-
   .confirm-loc {
     background: var(--surface);
     border-radius: var(--radius-sm);
@@ -530,7 +665,6 @@
     margin: 16px 0;
     font-size: 14px;
   }
-
   .confirm-link {
     color: var(--accent);
     font-weight: 600;
@@ -538,26 +672,16 @@
     margin-top: 12px;
     font-size: 15px;
   }
-
   .confirm-link:hover { text-decoration: underline; }
 
-  /* ========== ROUTE OPTIONS ========== */
-  .route-header {
-    padding: 16px 20px 8px;
-  }
-
-  .route-dest {
-    font-size: 14px;
-    color: var(--text-dim);
-    margin-bottom: 4px;
-  }
-
+  /* Route options */
+  .route-header { padding: 16px 20px 8px; }
+  .route-dest { font-size: 14px; color: var(--text-dim); margin-bottom: 4px; }
   .route-title {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 20px;
     font-weight: 700;
   }
-
   .route-map-mini {
     margin: 12px 20px;
     height: 160px;
@@ -566,12 +690,6 @@
     position: relative;
     overflow: hidden;
   }
-
-  .route-line {
-    position: absolute;
-    border-radius: 4px;
-  }
-
   .route-cards {
     padding: 0 20px;
     display: flex;
@@ -581,7 +699,6 @@
     overflow-y: auto;
     padding-bottom: 20px;
   }
-
   .route-card {
     background: var(--surface);
     border: 1px solid var(--border);
@@ -590,17 +707,14 @@
     cursor: pointer;
     transition: all 0.2s;
   }
-
   .route-card:hover { border-color: var(--accent); }
   .route-card.recommended { border-color: var(--accent); }
-
   .route-card-top {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 8px;
   }
-
   .route-name {
     font-weight: 700;
     font-size: 16px;
@@ -608,7 +722,6 @@
     align-items: center;
     gap: 8px;
   }
-
   .route-badge {
     font-size: 10px;
     padding: 3px 8px;
@@ -616,12 +729,9 @@
     font-weight: 700;
     text-transform: uppercase;
   }
-
   .route-badge.safe { background: rgba(0,214,143,0.15); color: var(--accent); }
   .route-badge.caution { background: rgba(255,165,2,0.15); color: var(--warning); }
-
   .route-time { font-size: 14px; color: var(--text-dim); font-weight: 600; }
-
   .route-details {
     display: flex;
     gap: 16px;
@@ -629,9 +739,7 @@
     color: var(--text-dim);
     margin-bottom: 12px;
   }
-
   .route-detail-item { display: flex; align-items: center; gap: 4px; }
-
   .route-start-btn {
     width: 100%;
     padding: 12px;
@@ -645,10 +753,9 @@
     cursor: pointer;
     transition: all 0.2s;
   }
-
   .route-start-btn:hover { background: var(--accent-dim); }
 
-  /* ========== ACTIVE NAV ========== */
+  /* Active nav */
   .active-nav-header {
     background: var(--accent);
     color: #000;
@@ -657,11 +764,9 @@
     align-items: center;
     gap: 12px;
   }
-
   .active-nav-header .direction { font-size: 28px; }
   .active-nav-header .instruction { font-size: 16px; font-weight: 600; }
   .active-nav-header .distance { font-size: 13px; opacity: 0.7; }
-
   .nav-map-area {
     flex: 1;
     position: relative;
@@ -670,7 +775,6 @@
     border-radius: var(--radius);
     overflow: hidden;
   }
-
   .obstruction-popup {
     position: absolute;
     bottom: 80px;
@@ -685,23 +789,18 @@
     animation: slideUp 0.4s ease;
     display: none;
   }
-
   .obstruction-popup.show { display: block; }
-
   @keyframes slideUp {
     from { transform: translateY(20px); opacity: 0; }
     to { transform: translateY(0); opacity: 1; }
   }
-
   .popup-top {
     display: flex;
     justify-content: space-between;
     align-items: flex-start;
     margin-bottom: 6px;
   }
-
   .popup-title { font-weight: 700; font-size: 15px; }
-
   .popup-dismiss {
     width: 24px;
     height: 24px;
@@ -716,9 +815,7 @@
     font-weight: 700;
     color: #000;
   }
-
   .popup-sub { font-size: 13px; opacity: 0.8; }
-
   .popup-timer {
     height: 3px;
     background: rgba(0,0,0,0.15);
@@ -726,7 +823,6 @@
     margin-top: 10px;
     overflow: hidden;
   }
-
   .popup-timer-bar {
     height: 100%;
     background: rgba(0,0,0,0.4);
@@ -734,12 +830,10 @@
     width: 100%;
     animation: timerShrink 8s linear forwards;
   }
-
   @keyframes timerShrink {
     from { width: 100%; }
     to { width: 0%; }
   }
-
   .nav-bottom-bar {
     background: var(--surface);
     padding: 16px 20px 28px;
@@ -748,18 +842,8 @@
     align-items: center;
     border-top: 1px solid var(--border);
   }
-
-  .nav-eta {
-    font-size: 13px;
-    color: var(--text-dim);
-  }
-
-  .nav-eta strong {
-    font-size: 22px;
-    color: var(--text);
-    display: block;
-  }
-
+  .nav-eta { font-size: 13px; color: var(--text-dim); }
+  .nav-eta strong { font-size: 22px; color: var(--text); display: block; }
   .end-nav-btn {
     padding: 12px 24px;
     background: var(--danger);
@@ -772,7 +856,7 @@
     cursor: pointer;
   }
 
-  /* ========== INTERSECTION WARNING ========== */
+  /* Intersection */
   .intersection-banner {
     background: var(--danger);
     color: #fff;
@@ -783,15 +867,8 @@
     font-weight: 600;
     font-size: 15px;
   }
-
   .intersection-banner svg { width: 22px; height: 22px; flex-shrink: 0; }
-
-  .intersection-detail {
-    padding: 20px;
-    flex: 1;
-    overflow-y: auto;
-  }
-
+  .intersection-detail { padding: 20px; flex: 1; overflow-y: auto; }
   .safety-rating-card {
     background: var(--surface);
     border-radius: var(--radius);
@@ -799,41 +876,29 @@
     text-align: center;
     margin-bottom: 16px;
   }
-
   .safety-rating-value {
     font-family: 'Space Grotesk', sans-serif;
     font-size: 48px;
     font-weight: 700;
     color: var(--danger);
   }
-
   .safety-rating-label { font-size: 14px; color: var(--text-dim); }
-
-  .safety-stars {
-    display: flex;
-    justify-content: center;
-    gap: 4px;
-    margin: 8px 0;
-  }
-
+  .safety-stars { display: flex; justify-content: center; gap: 4px; margin: 8px 0; }
   .star { font-size: 20px; }
   .star.filled { color: var(--danger); }
   .star.empty { color: var(--surface-2); }
-
   .safety-reports {
     background: var(--surface);
     border-radius: var(--radius);
     padding: 16px;
     margin-bottom: 16px;
   }
-
   .safety-reports h3 {
     font-size: 14px;
     font-weight: 600;
     margin-bottom: 12px;
     color: var(--text-dim);
   }
-
   .report-item {
     padding: 10px 0;
     border-bottom: 1px solid var(--border);
@@ -843,10 +908,7 @@
     align-items: flex-start;
     gap: 8px;
   }
-
   .report-item:last-child { border-bottom: none; }
-  .report-item .report-icon { color: var(--warning); font-size: 16px; }
-
   .no-signal-badge {
     background: rgba(255,71,87,0.1);
     border: 1px solid rgba(255,71,87,0.3);
@@ -860,7 +922,27 @@
     color: var(--danger);
     margin-bottom: 16px;
   }
-
+  .sensitivity-bar {
+    background: var(--surface);
+    border-radius: var(--radius);
+    padding: 14px 16px;
+    margin-bottom: 16px;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 13px;
+    color: var(--text-dim);
+  }
+  .sensitivity-bar select {
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    color: var(--text);
+    padding: 6px 10px;
+    border-radius: 6px;
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    margin-left: auto;
+  }
   .alt-route-btn {
     width: 100%;
     padding: 16px;
@@ -874,33 +956,9 @@
     cursor: pointer;
     transition: all 0.2s;
   }
-
   .alt-route-btn:hover { background: var(--accent-dim); }
 
-  .sensitivity-bar {
-    background: var(--surface);
-    border-radius: var(--radius);
-    padding: 14px 16px;
-    margin-bottom: 16px;
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    font-size: 13px;
-    color: var(--text-dim);
-  }
-
-  .sensitivity-bar select {
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    color: var(--text);
-    padding: 6px 10px;
-    border-radius: 6px;
-    font-family: 'DM Sans', sans-serif;
-    font-size: 13px;
-    margin-left: auto;
-  }
-
-  /* ========== HEAT MAP ========== */
+  /* Heat map */
   .heatmap-area {
     flex: 1;
     position: relative;
@@ -909,13 +967,7 @@
     border-radius: var(--radius);
     overflow: hidden;
   }
-
-  .heat-dot {
-    position: absolute;
-    border-radius: 50%;
-    opacity: 0.7;
-  }
-
+  .heat-dot { position: absolute; border-radius: 50%; opacity: 0.7; }
   .heat-legend {
     position: absolute;
     bottom: 12px;
@@ -925,167 +977,75 @@
     padding: 12px;
     font-size: 11px;
   }
+  .heat-legend-item { display: flex; align-items: center; gap: 8px; margin-bottom: 4px; }
+  .heat-legend-dot { width: 12px; height: 12px; border-radius: 50%; }
 
-  .heat-legend-item {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    margin-bottom: 4px;
-  }
-
-  .heat-legend-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-  }
-
-  /* ========== EVAL FORM ========== */
-  .eval-screen {
-    flex: 1;
-    overflow-y: auto;
-    padding: 20px;
-  }
-
-  .eval-title {
-    font-family: 'Space Grotesk', sans-serif;
-    font-size: 20px;
-    font-weight: 700;
-    margin-bottom: 4px;
-  }
-
-  .eval-sub {
-    font-size: 13px;
-    color: var(--text-dim);
-    margin-bottom: 20px;
-  }
-
-  .eval-group {
-    margin-bottom: 16px;
-  }
-
-  .eval-group label {
-    display: block;
-    font-size: 13px;
-    font-weight: 600;
-    color: var(--text-dim);
-    margin-bottom: 6px;
-  }
-
-  .eval-group select, .eval-group textarea, .eval-group input {
-    width: 100%;
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-sm);
-    padding: 12px;
-    color: var(--text);
-    font-family: 'DM Sans', sans-serif;
-    font-size: 14px;
-    resize: vertical;
-  }
-
-  .eval-group textarea { min-height: 80px; }
-  .eval-group select option { background: var(--surface); }
-
-  .eval-heuristic-list {
-    font-size: 12px;
-    color: var(--text-muted);
-    margin-bottom: 16px;
-    line-height: 1.6;
-  }
-
-  .eval-submit-btn {
+  /* Logout button */
+  .logout-btn {
     width: 100%;
     padding: 14px;
-    background: var(--accent);
-    color: #000;
-    border: none;
+    background: transparent;
+    border: 1px solid var(--danger);
+    color: var(--danger);
     border-radius: var(--radius);
     font-family: 'DM Sans', sans-serif;
     font-size: 15px;
-    font-weight: 700;
+    font-weight: 600;
     cursor: pointer;
-    margin-bottom: 40px;
+    transition: all 0.2s;
+    margin-top: 8px;
   }
+  .logout-btn:hover { background: rgba(255,71,87,0.1); }
 
-  /* ========== BACK BUTTON ========== */
-  .back-btn {
-    background: none;
-    border: none;
-    color: var(--text);
-    cursor: pointer;
-    padding: 4px;
+  /* Contact row */
+  .contact-row {
     display: flex;
     align-items: center;
-    font-family: 'DM Sans', sans-serif;
+    gap: 12px;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--border);
+    cursor: pointer;
   }
-
-  .back-btn svg { width: 24px; height: 24px; }
-
-  /* ========== SCREEN NAV DOTS ========== */
-  .screen-nav-strip {
-    position: absolute;
-    top: 50%;
-    right: -50px;
-    transform: translateY(-50%);
-    display: flex;
-    flex-direction: column;
-    gap: 6px;
-    z-index: 100;
-  }
-
-  /* ========== GLOBAL HELPERS ========== */
-  .text-accent { color: var(--accent); }
-  .text-danger { color: var(--danger); }
-  .text-warning { color: var(--warning); }
-  .mt-8 { margin-top: 8px; }
-  .mb-8 { margin-bottom: 8px; }
+  .contact-row:last-child { border-bottom: none; }
+  .contact-row svg { width: 20px; height: 20px; color: var(--accent); flex-shrink: 0; }
+  .contact-row .cr-text { font-size: 15px; }
+  .contact-row .cr-sub { font-size: 12px; color: var(--text-muted); }
 </style>
 </head>
 <body>
 
 <div class="phone-frame" id="app">
 
-  <!-- ===== SCREEN 1: HOME MAP ===== -->
+  <!-- ===== SCREEN: HOME MAP ===== -->
   <div class="screen active" id="screen-home">
-    <div class="status-bar">
-      <span>9:41</span>
-      <span>⦿ LTE</span>
-    </div>
-
+    <div class="status-bar"><span>9:41</span><span>⦿ LTE</span></div>
     <div class="top-nav">
       <button class="icon-btn" onclick="toggleSidebar()">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
       </button>
       <div class="logo">Bon<span>Voyage</span></div>
-      <button class="icon-btn" onclick="goTo('screen-eval')">
+      <button class="icon-btn" onclick="goTo('screen-profile')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
       </button>
     </div>
-
     <div class="search-bar" onclick="goTo('screen-routes')">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
       <span class="placeholder">Where to?</span>
     </div>
-
     <div class="map-area">
       <div class="map-canvas">
         <div class="map-grid"></div>
-        <!-- Roads -->
         <div class="map-road h" style="top:30%;left:0;right:0;"></div>
         <div class="map-road h" style="top:55%;left:0;right:0;"></div>
         <div class="map-road h" style="top:78%;left:0;right:0;"></div>
         <div class="map-road v" style="left:25%;top:0;bottom:0;"></div>
         <div class="map-road v" style="left:55%;top:0;bottom:0;"></div>
         <div class="map-road v" style="left:80%;top:0;bottom:0;"></div>
-
-        <!-- Labels -->
         <div class="map-label" style="top:27%;left:30%;">Mass Ave</div>
         <div class="map-label" style="top:52%;left:60%;">Beacon St</div>
         <div class="map-label" style="top:75%;left:15%;">Boylston St</div>
         <div class="map-label" style="top:15%;left:57%;">Cambridge St</div>
         <div class="map-label" style="top:65%;left:40%;font-weight:700;color:var(--text);font-size:12px;">Back Bay</div>
-
-        <!-- Pins -->
         <div class="map-pin user" style="top:48%;left:50%;">
           <svg viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="5"/></svg>
         </div>
@@ -1099,13 +1059,11 @@
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 18L18 6M6 6l12 12"/></svg>
         </div>
       </div>
-
       <button class="fab" onclick="goTo('screen-report')">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M12 9v4M12 17h.01M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/></svg>
         Report Obstruction
       </button>
     </div>
-
     <div class="bottom-nav">
       <button class="nav-item active">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
@@ -1130,27 +1088,27 @@
           <div class="reports">12 reports submitted</div>
         </div>
         <div class="sidebar-menu">
-          <button class="sidebar-item">
+          <button class="sidebar-item" onclick="closeSidebarDirect();goTo('screen-profile');">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M6 21v-2a4 4 0 014-4h4a4 4 0 014 4v2"/></svg>
             Your Profile
           </button>
-          <button class="sidebar-item">
+          <button class="sidebar-item" onclick="closeSidebarDirect();goTo('screen-reports');">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 00-2 2v16a2 2 0 002 2h12a2 2 0 002-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
             Your Reports
           </button>
-          <button class="sidebar-item">
+          <button class="sidebar-item" onclick="closeSidebarDirect();goTo('screen-alerts');">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/><path d="M13.73 21a2 2 0 01-3.46 0"/></svg>
             Alert Preferences
           </button>
-          <button class="sidebar-item" onclick="goTo('screen-heatmap');closeSidebarDirect();">
+          <button class="sidebar-item" onclick="closeSidebarDirect();goTo('screen-heatmap');">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M9 21V9"/></svg>
             Safety Heat Map
           </button>
-          <button class="sidebar-item">
+          <button class="sidebar-item" onclick="closeSidebarDirect();goTo('screen-settings');">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 00.33 1.82l.06.06a2 2 0 010 2.83 2 2 0 01-2.83 0l-.06-.06a1.65 1.65 0 00-1.82-.33 1.65 1.65 0 00-1 1.51V21a2 2 0 01-4 0v-.09A1.65 1.65 0 009 19.4a1.65 1.65 0 00-1.82.33l-.06.06a2 2 0 01-2.83-2.83l.06-.06A1.65 1.65 0 004.68 15a1.65 1.65 0 00-1.51-1H3a2 2 0 010-4h.09A1.65 1.65 0 004.6 9a1.65 1.65 0 00-.33-1.82l-.06-.06a2 2 0 012.83-2.83l.06.06A1.65 1.65 0 009 4.68a1.65 1.65 0 001-1.51V3a2 2 0 014 0v.09a1.65 1.65 0 001 1.51 1.65 1.65 0 001.82-.33l.06-.06a2 2 0 012.83 2.83l-.06.06A1.65 1.65 0 0019.4 9a1.65 1.65 0 001.51 1H21a2 2 0 010 4h-.09a1.65 1.65 0 00-1.51 1z"/></svg>
             Settings
           </button>
-          <button class="sidebar-item">
+          <button class="sidebar-item" onclick="closeSidebarDirect();goTo('screen-help');">
             <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 015.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
             Help
           </button>
@@ -1159,20 +1117,16 @@
     </div>
   </div>
 
-  <!-- ===== SCREEN 2: REPORT FORM ===== -->
+  <!-- ===== SCREEN: REPORT FORM ===== -->
   <div class="screen" id="screen-report">
     <div class="status-bar"><span>9:41</span><span>⦿ LTE</span></div>
     <div class="top-nav">
-      <button class="back-btn" onclick="goTo('screen-home')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
+      <button class="back-btn" onclick="goTo('screen-home')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
       <div class="logo">Report</div>
       <div style="width:40px"></div>
     </div>
-
     <div class="form-screen">
       <div class="form-header">Report Obstruction</div>
-
       <div class="form-section">
         <div class="form-label">Location (GPS Auto-Detected)</div>
         <div class="location-box">
@@ -1183,29 +1137,15 @@
           </div>
         </div>
       </div>
-
       <div class="form-section">
         <div class="form-label">What's blocking the lane?</div>
-        <div class="obstruction-options" id="obstructionOpts">
-          <div class="obstruction-opt" onclick="selectObstruction(this)">
-            <div class="radio"></div>
-            <div>🚚 Delivery Vehicle</div>
-          </div>
-          <div class="obstruction-opt" onclick="selectObstruction(this)">
-            <div class="radio"></div>
-            <div>🚧 Construction</div>
-          </div>
-          <div class="obstruction-opt" onclick="selectObstruction(this)">
-            <div class="radio"></div>
-            <div>🚗 Parked/Double-Parked Car</div>
-          </div>
-          <div class="obstruction-opt" onclick="selectObstruction(this)">
-            <div class="radio"></div>
-            <div>⚠️ Other Hazard<br><span class="hint-text">e.g., pothole, debris, road damage</span></div>
-          </div>
+        <div class="obstruction-options">
+          <div class="obstruction-opt" onclick="selectObstruction(this)"><div class="radio"></div><div>🚚 Delivery Vehicle</div></div>
+          <div class="obstruction-opt" onclick="selectObstruction(this)"><div class="radio"></div><div>🚧 Construction</div></div>
+          <div class="obstruction-opt" onclick="selectObstruction(this)"><div class="radio"></div><div>🚗 Parked / Double-Parked Car</div></div>
+          <div class="obstruction-opt" onclick="selectObstruction(this)"><div class="radio"></div><div>⚠️ Other Hazard<br><span class="hint-text">e.g., pothole, debris, road damage</span></div></div>
         </div>
       </div>
-
       <div class="form-section">
         <div class="form-label">Optional</div>
         <div class="optional-actions">
@@ -1219,351 +1159,438 @@
           </button>
         </div>
       </div>
-
       <button class="submit-btn" onclick="goTo('screen-confirm')">Submit Report</button>
     </div>
   </div>
 
-  <!-- ===== SCREEN 3: CONFIRM ===== -->
+  <!-- ===== SCREEN: CONFIRM ===== -->
   <div class="screen" id="screen-confirm">
     <div class="status-bar"><span>9:41</span><span>⦿ LTE</span></div>
     <div class="confirm-screen">
-      <div class="confirm-check">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg>
-      </div>
+      <div class="confirm-check"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"/></svg></div>
       <div class="confirm-title">Report Submitted!</div>
       <div class="confirm-sub">Thanks for keeping Boston cyclists safe.</div>
-      <div class="confirm-loc">
-        📍 Mass Ave near Symphony<br>
-        <span style="font-size:12px;color:var(--text-muted);">Delivery Vehicle · Just now</span>
-      </div>
+      <div class="confirm-loc">📍 Mass Ave near Symphony<br><span style="font-size:12px;color:var(--text-muted);">Delivery Vehicle · Just now</span></div>
       <div class="confirm-link" onclick="goTo('screen-home')">← View on Map</div>
     </div>
   </div>
 
-  <!-- ===== SCREEN 4: ROUTE OPTIONS ===== -->
+  <!-- ===== SCREEN: ROUTE OPTIONS ===== -->
   <div class="screen" id="screen-routes">
     <div class="status-bar"><span>5:30 PM</span><span>⦿ LTE</span></div>
     <div class="top-nav">
-      <button class="back-btn" onclick="goTo('screen-home')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
+      <button class="back-btn" onclick="goTo('screen-home')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
       <div class="logo">Routes</div>
       <div style="width:40px"></div>
     </div>
-
     <div class="route-header">
       <div class="route-dest">From: Back Bay → To: Cambridge, Main St</div>
       <div class="route-title">Choose Your Route</div>
     </div>
-
     <div class="route-map-mini">
       <div class="map-grid"></div>
-      <!-- Route lines as colored bars -->
       <svg viewBox="0 0 350 140" style="position:absolute;inset:0;width:100%;height:100%;">
         <path d="M40 120 Q100 100 140 60 Q180 20 250 30 Q300 35 320 50" fill="none" stroke="#ffa502" stroke-width="3" stroke-dasharray="8,4" opacity="0.8"/>
         <path d="M40 120 Q80 80 120 70 Q180 55 230 50 Q280 45 320 50" fill="none" stroke="#00d68f" stroke-width="3.5" opacity="0.9"/>
         <path d="M40 120 Q60 120 80 110 Q120 90 160 95 Q220 100 270 80 Q300 65 320 50" fill="none" stroke="#4a90d9" stroke-width="3" stroke-dasharray="5,5" opacity="0.7"/>
-        <circle cx="40" cy="120" r="5" fill="#4a90d9"/>
-        <circle cx="320" cy="50" r="5" fill="#ff4757"/>
+        <circle cx="40" cy="120" r="5" fill="#4a90d9"/><circle cx="320" cy="50" r="5" fill="#ff4757"/>
       </svg>
     </div>
-
     <div class="route-cards">
       <div class="route-card">
         <div class="route-card-top">
-          <div class="route-name">
-            <span style="color:var(--warning);">A</span> Mass Ave Direct
-            <span class="route-badge caution">2 issues</span>
-          </div>
+          <div class="route-name"><span style="color:var(--warning);">A</span> Mass Ave Direct <span class="route-badge caution">2 issues</span></div>
           <div class="route-time">18 min</div>
         </div>
-        <div class="route-details">
-          <div class="route-detail-item">⚠️ Busy road</div>
-          <div class="route-detail-item">🚚 2 obstructions reported</div>
-        </div>
+        <div class="route-details"><div class="route-detail-item">⚠️ Busy road</div><div class="route-detail-item">🚚 2 obstructions</div></div>
         <button class="route-start-btn" style="background:var(--warning);color:#000;" onclick="goTo('screen-nav')">Start This Route</button>
       </div>
-
       <div class="route-card recommended">
         <div class="route-card-top">
-          <div class="route-name">
-            <span class="text-accent">B</span> Bike Trail Route
-            <span class="route-badge safe">Safest</span>
-          </div>
+          <div class="route-name"><span style="color:var(--accent);">B</span> Bike Trail Route <span class="route-badge safe">Safest</span></div>
           <div class="route-time">22 min</div>
         </div>
-        <div class="route-details">
-          <div class="route-detail-item">🚲 Bike-only trails</div>
-          <div class="route-detail-item">✅ No issues reported</div>
-        </div>
+        <div class="route-details"><div class="route-detail-item">🚲 Bike-only trails</div><div class="route-detail-item">✅ No issues</div></div>
         <button class="route-start-btn" onclick="goTo('screen-nav')">Start This Route</button>
       </div>
-
       <div class="route-card">
         <div class="route-card-top">
-          <div class="route-name">
-            <span style="color:#4a90d9;">C</span> River Path
-            <span class="route-badge safe">Scenic</span>
-          </div>
+          <div class="route-name"><span style="color:#4a90d9;">C</span> River Path <span class="route-badge safe">Scenic</span></div>
           <div class="route-time">25 min</div>
         </div>
-        <div class="route-details">
-          <div class="route-detail-item">🌊 Charles River path</div>
-          <div class="route-detail-item">✅ No issues reported</div>
-        </div>
+        <div class="route-details"><div class="route-detail-item">🌊 Charles River path</div><div class="route-detail-item">✅ No issues</div></div>
         <button class="route-start-btn" onclick="goTo('screen-nav')">Start This Route</button>
       </div>
     </div>
   </div>
 
-  <!-- ===== SCREEN 5: ACTIVE NAVIGATION ===== -->
+  <!-- ===== SCREEN: ACTIVE NAVIGATION ===== -->
   <div class="screen" id="screen-nav">
     <div class="active-nav-header">
       <div class="direction">↗</div>
-      <div>
-        <div class="instruction">Turn right onto Beacon St</div>
-        <div class="distance">0.3 mi</div>
-      </div>
+      <div><div class="instruction">Turn right onto Beacon St</div><div class="distance">0.3 mi</div></div>
     </div>
-
     <div class="nav-map-area">
       <div class="map-grid"></div>
-      <!-- Simplified nav map -->
       <svg viewBox="0 0 366 400" style="position:absolute;inset:0;width:100%;height:100%;">
-        <!-- Route path -->
         <path d="M183 380 L183 250 L280 180 L280 50" fill="none" stroke="var(--accent)" stroke-width="5" stroke-linecap="round"/>
-        <!-- User position -->
         <circle cx="183" cy="250" r="10" fill="#4a90d9" stroke="#fff" stroke-width="3"/>
-        <!-- Street labels -->
         <text x="190" y="310" fill="#556677" font-size="11" font-family="DM Sans">Boylston St</text>
         <text x="260" y="230" fill="#556677" font-size="11" font-family="DM Sans" transform="rotate(-50 260 230)">Beacon St</text>
-        <!-- Destination -->
         <circle cx="280" cy="50" r="8" fill="var(--danger)"/>
         <text x="292" y="54" fill="var(--text)" font-size="11" font-family="DM Sans" font-weight="600">DEST</text>
-        <!-- Obstruction marker -->
         <circle cx="280" cy="140" r="12" fill="var(--warning)" opacity="0.9"/>
         <text x="275" y="144" fill="#000" font-size="14" font-weight="bold">!</text>
       </svg>
-
       <div class="obstruction-popup show" id="obstructionPopup">
         <div class="popup-top">
-          <div>
-            <div class="popup-title">⚠️ Obstruction Ahead — 400 ft</div>
-            <div class="popup-sub">Delivery vehicle blocking bike lane on Beacon St</div>
-          </div>
+          <div><div class="popup-title">⚠️ Obstruction Ahead — 400 ft</div><div class="popup-sub">Delivery vehicle blocking bike lane on Beacon St</div></div>
           <button class="popup-dismiss" onclick="dismissPopup()">✕</button>
         </div>
         <div class="popup-timer"><div class="popup-timer-bar"></div></div>
       </div>
     </div>
-
     <div class="nav-bottom-bar">
-      <div class="nav-eta">
-        <strong>10 min</strong>
-        0.9 mi remaining
-      </div>
+      <div class="nav-eta"><strong>10 min</strong>0.9 mi remaining</div>
       <button class="end-nav-btn" onclick="goTo('screen-home')">End</button>
     </div>
   </div>
 
-  <!-- ===== SCREEN 6: INTERSECTION SAFETY ===== -->
+  <!-- ===== SCREEN: INTERSECTION ===== -->
   <div class="screen" id="screen-intersection">
     <div class="status-bar"><span>9:41</span><span>⦿ LTE</span></div>
     <div class="top-nav">
-      <button class="back-btn" onclick="goTo('screen-home')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
+      <button class="back-btn" onclick="goTo('screen-home')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
       <div class="logo">Intersection</div>
       <div style="width:40px"></div>
     </div>
-
     <div class="intersection-banner">
       <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M10.29 3.86L1.82 18a2 2 0 001.71 3h16.94a2 2 0 001.71-3L13.71 3.86a2 2 0 00-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg>
       Caution: Poor Safety Ahead
     </div>
-
     <div class="intersection-detail">
       <div class="safety-rating-card">
         <div class="safety-rating-value">2/5</div>
-        <div class="safety-stars">
-          <span class="star filled">★</span>
-          <span class="star filled">★</span>
-          <span class="star empty">★</span>
-          <span class="star empty">★</span>
-          <span class="star empty">★</span>
-        </div>
+        <div class="safety-stars"><span class="star filled">★</span><span class="star filled">★</span><span class="star empty">★</span><span class="star empty">★</span><span class="star empty">★</span></div>
         <div class="safety-rating-label">Som St & Eve St · Safety Rating</div>
       </div>
-
       <div class="sensitivity-bar">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:18px;height:18px;flex-shrink:0;"><path d="M18 8A6 6 0 006 8c0 7-3 9-3 9h18s-3-2-3-9"/></svg>
         Alert sensitivity:
-        <select>
-          <option>High-Risk Only</option>
-          <option>All Intersections</option>
-          <option>Off</option>
-        </select>
+        <select><option>High-Risk Only</option><option>All Intersections</option><option>Off</option></select>
       </div>
-
       <div class="no-signal-badge">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" style="width:20px;height:20px;"><circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/></svg>
         No Protected Bike Signal Here
       </div>
-
       <div class="safety-reports">
         <h3>Recent Reports (7)</h3>
-        <div class="report-item">
-          <span class="report-icon">⚠️</span>
-          <div>"Drivers making sudden right turns without checking bike lane" <span style="color:var(--text-muted);font-size:12px;">— 2 days ago</span></div>
-        </div>
-        <div class="report-item">
-          <span class="report-icon">⚠️</span>
-          <div>"Confusing lane markings, nearly got hit" <span style="color:var(--text-muted);font-size:12px;">— 4 days ago</span></div>
-        </div>
-        <div class="report-item">
-          <span class="report-icon">⚠️</span>
-          <div>"No visibility around the corner, very scary at night" <span style="color:var(--text-muted);font-size:12px;">— 1 week ago</span></div>
-        </div>
+        <div class="report-item"><span>⚠️</span><div>"Drivers making sudden right turns without checking" <span style="color:var(--text-muted);font-size:12px;">— 2 days ago</span></div></div>
+        <div class="report-item"><span>⚠️</span><div>"Confusing lane markings, nearly got hit" <span style="color:var(--text-muted);font-size:12px;">— 4 days ago</span></div></div>
+        <div class="report-item"><span>⚠️</span><div>"No visibility around the corner, scary at night" <span style="color:var(--text-muted);font-size:12px;">— 1 week ago</span></div></div>
       </div>
-
       <button class="alt-route-btn" onclick="goTo('screen-routes')">Find Alternate Route →</button>
     </div>
   </div>
 
-  <!-- ===== SCREEN 7: HEAT MAP ===== -->
+  <!-- ===== SCREEN: HEAT MAP ===== -->
   <div class="screen" id="screen-heatmap">
     <div class="status-bar"><span>9:41</span><span>⦿ LTE</span></div>
     <div class="top-nav">
-      <button class="back-btn" onclick="goTo('screen-home')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
+      <button class="back-btn" onclick="goTo('screen-home')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
       <div class="logo">Safety <span>Heat Map</span></div>
       <div style="width:40px"></div>
     </div>
-
     <div class="heatmap-area">
       <div class="map-grid"></div>
-      <!-- Fake map labels -->
       <div class="map-label" style="top:20%;left:20%;">Somerville</div>
       <div class="map-label" style="top:45%;left:55%;font-weight:700;color:var(--text);">Cambridge</div>
       <div class="map-label" style="top:70%;left:30%;">Back Bay</div>
       <div class="map-label" style="top:60%;left:70%;">South End</div>
-
-      <!-- Heat dots — danger clusters -->
       <div class="heat-dot" style="width:40px;height:40px;background:rgba(255,71,87,0.5);top:25%;left:35%;"></div>
       <div class="heat-dot" style="width:30px;height:30px;background:rgba(255,71,87,0.6);top:22%;left:40%;"></div>
       <div class="heat-dot" style="width:25px;height:25px;background:rgba(255,71,87,0.4);top:30%;left:33%;"></div>
-
       <div class="heat-dot" style="width:35px;height:35px;background:rgba(255,165,2,0.5);top:50%;left:45%;"></div>
       <div class="heat-dot" style="width:28px;height:28px;background:rgba(255,165,2,0.4);top:48%;left:50%;"></div>
-
       <div class="heat-dot" style="width:45px;height:45px;background:rgba(255,71,87,0.55);top:65%;left:55%;"></div>
       <div class="heat-dot" style="width:30px;height:30px;background:rgba(255,71,87,0.5);top:68%;left:60%;"></div>
       <div class="heat-dot" style="width:22px;height:22px;background:rgba(255,165,2,0.5);top:62%;left:50%;"></div>
-
-      <!-- Safe areas -->
       <div class="heat-dot" style="width:30px;height:30px;background:rgba(0,214,143,0.4);top:40%;left:25%;"></div>
       <div class="heat-dot" style="width:35px;height:35px;background:rgba(0,214,143,0.35);top:55%;left:20%;"></div>
       <div class="heat-dot" style="width:25px;height:25px;background:rgba(0,214,143,0.4);top:35%;left:70%;"></div>
-
       <div class="heat-legend">
         <div class="heat-legend-item"><div class="heat-legend-dot" style="background:var(--danger);"></div> High danger</div>
         <div class="heat-legend-item"><div class="heat-legend-dot" style="background:var(--warning);"></div> Moderate</div>
         <div class="heat-legend-item"><div class="heat-legend-dot" style="background:var(--accent);"></div> Safe</div>
       </div>
     </div>
-
     <div class="bottom-nav">
-      <button class="nav-item" onclick="goTo('screen-home')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <span>Explore</span>
-      </button>
-      <button class="nav-item" onclick="goTo('screen-routes')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg>
-        <span>Navigate</span>
-      </button>
-      <button class="nav-item active">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
-        <span>Activity</span>
-      </button>
+      <button class="nav-item" onclick="goTo('screen-home')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg><span>Explore</span></button>
+      <button class="nav-item" onclick="goTo('screen-routes')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polygon points="3 11 22 2 13 21 11 13 3 11"/></svg><span>Navigate</span></button>
+      <button class="nav-item active"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg><span>Activity</span></button>
     </div>
   </div>
 
-  <!-- ===== SCREEN 8: HEURISTIC EVALUATION FORM ===== -->
-  <div class="screen" id="screen-eval">
+  <!-- ===== SCREEN: PROFILE ===== -->
+  <div class="screen" id="screen-profile">
     <div class="status-bar"><span>9:41</span><span>⦿ LTE</span></div>
     <div class="top-nav">
-      <button class="back-btn" onclick="goTo('screen-home')">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <div class="logo">Evaluate</div>
+      <button class="back-btn" onclick="goTo('screen-home')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <div class="logo">Profile</div>
       <div style="width:40px"></div>
     </div>
-
-    <div class="eval-screen">
-      <div class="eval-title">Heuristic Evaluation</div>
-      <div class="eval-sub">BonVoyage: Safe Cycling Navigation for Boston<br>Team 13 — Sacheth & Arjun</div>
-
-      <div class="eval-heuristic-list">
-        <strong>Nielsen's 10 Heuristics:</strong><br>
-        H1: Visibility of system status · H2: Match between system & real world · H3: User control & freedom · H4: Consistency & standards · H5: Error prevention · H6: Recognition over recall · H7: Flexibility & efficiency · H8: Aesthetic & minimalist design · H9: Help users recognize/recover from errors · H10: Help & documentation
-      </div>
-
-      <div id="evalEntries">
-        <div class="eval-entry" style="background:var(--surface);border-radius:var(--radius);padding:16px;margin-bottom:12px;">
-          <div class="eval-group">
-            <label>Evaluator Name</label>
-            <input type="text" placeholder="Your name" id="evalName">
-          </div>
-        </div>
-
-        <div class="eval-entry" style="background:var(--surface);border-radius:var(--radius);padding:16px;margin-bottom:12px;">
-          <div class="eval-group">
-            <label>Issue #1 — Which heuristic is violated?</label>
-            <select>
-              <option value="">Select heuristic...</option>
-              <option>H1: Visibility of system status</option>
-              <option>H2: Match between system & real world</option>
-              <option>H3: User control & freedom</option>
-              <option>H4: Consistency & standards</option>
-              <option>H5: Error prevention</option>
-              <option>H6: Recognition rather than recall</option>
-              <option>H7: Flexibility & efficiency of use</option>
-              <option>H8: Aesthetic & minimalist design</option>
-              <option>H9: Help users recognize/recover from errors</option>
-              <option>H10: Help & documentation</option>
-            </select>
-          </div>
-          <div class="eval-group">
-            <label>Where in the interface?</label>
-            <input type="text" placeholder="e.g., Report form, Route selection...">
-          </div>
-          <div class="eval-group">
-            <label>Describe the problem</label>
-            <textarea placeholder="What did you observe?"></textarea>
-          </div>
-          <div class="eval-group">
-            <label>Severity (0–4)</label>
-            <select>
-              <option value="">Select...</option>
-              <option>0 — Not a usability problem</option>
-              <option>1 — Cosmetic only</option>
-              <option>2 — Minor usability problem</option>
-              <option>3 — Major usability problem</option>
-              <option>4 — Usability catastrophe</option>
-            </select>
-          </div>
-          <div class="eval-group">
-            <label>Suggested fix (optional)</label>
-            <textarea placeholder="How would you fix this?"></textarea>
-          </div>
+    <div class="page-content">
+      <div class="profile-header">
+        <div class="profile-avatar">SC</div>
+        <div class="profile-name">Sarah Chen</div>
+        <div class="profile-email">sarah.chen@gmail.com</div>
+        <div class="profile-stats">
+          <div class="stat-box"><div class="stat-value">12</div><div class="stat-label">Reports</div></div>
+          <div class="stat-box"><div class="stat-value">89</div><div class="stat-label">Rides</div></div>
+          <div class="stat-box"><div class="stat-value">142</div><div class="stat-label">Miles</div></div>
         </div>
       </div>
+      <div class="card">
+        <div class="card-title">Account Details</div>
+        <div class="profile-field"><span class="pf-label">Name</span><span class="pf-value">Sarah Chen</span></div>
+        <div class="profile-field"><span class="pf-label">Email</span><span class="pf-value">sarah.chen@gmail.com</span></div>
+        <div class="profile-field"><span class="pf-label">City</span><span class="pf-value">Boston, MA</span></div>
+        <div class="profile-field"><span class="pf-label">Cycling Level</span><span class="pf-value">Daily Commuter</span></div>
+        <div class="profile-field"><span class="pf-label">Member Since</span><span class="pf-value">Jan 2026</span></div>
+      </div>
+      <div class="card">
+        <div class="card-title">Achievements</div>
+        <div class="profile-field"><span class="pf-label">🏆 First Report</span><span class="pf-value" style="color:var(--accent);">Earned</span></div>
+        <div class="profile-field"><span class="pf-label">🔥 10 Reports</span><span class="pf-value" style="color:var(--accent);">Earned</span></div>
+        <div class="profile-field"><span class="pf-label">🌟 50 Rides</span><span class="pf-value" style="color:var(--accent);">Earned</span></div>
+        <div class="profile-field"><span class="pf-label">💎 100 Miles</span><span class="pf-value" style="color:var(--accent);">Earned</span></div>
+        <div class="profile-field"><span class="pf-label">👑 Community Leader</span><span class="pf-value" style="color:var(--text-muted);">Locked</span></div>
+      </div>
+      <button class="logout-btn">Log Out</button>
+    </div>
+  </div>
 
-      <button style="width:100%;padding:12px;background:var(--surface-2);border:1px dashed var(--border);border-radius:var(--radius-sm);color:var(--accent);font-family:'DM Sans',sans-serif;font-size:14px;font-weight:600;cursor:pointer;margin-bottom:16px;" onclick="addEvalEntry()">+ Add Another Issue</button>
+  <!-- ===== SCREEN: YOUR REPORTS ===== -->
+  <div class="screen" id="screen-reports">
+    <div class="status-bar"><span>9:41</span><span>⦿ LTE</span></div>
+    <div class="top-nav">
+      <button class="back-btn" onclick="goTo('screen-home')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <div class="logo">Your <span>Reports</span></div>
+      <div style="width:40px"></div>
+    </div>
+    <div class="page-content">
+      <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;">
+        <div class="page-title" style="margin:0;">12 Reports</div>
+        <div style="font-size:13px;color:var(--accent);font-weight:600;">This Month: 4</div>
+      </div>
+      <div class="card" style="padding:0 16px;">
+        <div class="report-list-item">
+          <div class="report-icon-circle" style="background:rgba(255,165,2,0.15);">🚚</div>
+          <div class="report-info"><div class="ri-type">Delivery Vehicle</div><div class="ri-loc">Mass Ave near Symphony</div><div class="ri-time">Today, 9:35 AM</div></div>
+          <div class="report-status active-status">Active</div>
+        </div>
+        <div class="report-list-item">
+          <div class="report-icon-circle" style="background:rgba(255,165,2,0.15);">🚧</div>
+          <div class="report-info"><div class="ri-type">Construction</div><div class="ri-loc">Memorial Drive, Cambridge</div><div class="ri-time">Yesterday, 5:12 PM</div></div>
+          <div class="report-status active-status">Active</div>
+        </div>
+        <div class="report-list-item">
+          <div class="report-icon-circle" style="background:rgba(255,165,2,0.15);">🚗</div>
+          <div class="report-info"><div class="ri-type">Double-Parked Car</div><div class="ri-loc">Beacon St at Clarendon</div><div class="ri-time">Mar 31, 8:45 AM</div></div>
+          <div class="report-status active-status">Active</div>
+        </div>
+        <div class="report-list-item">
+          <div class="report-icon-circle" style="background:rgba(255,165,2,0.15);">⚠️</div>
+          <div class="report-info"><div class="ri-type">Pothole</div><div class="ri-loc">Huntington Ave near MFA</div><div class="ri-time">Mar 30, 7:20 AM</div></div>
+          <div class="report-status active-status">Active</div>
+        </div>
+        <div class="report-list-item">
+          <div class="report-icon-circle" style="background:rgba(136,153,170,0.1);">🚚</div>
+          <div class="report-info"><div class="ri-type">Delivery Vehicle</div><div class="ri-loc">Columbus Ave at Mass Ave</div><div class="ri-time">Mar 27, 9:10 AM</div></div>
+          <div class="report-status expired">Expired</div>
+        </div>
+        <div class="report-list-item">
+          <div class="report-icon-circle" style="background:rgba(136,153,170,0.1);">🚗</div>
+          <div class="report-info"><div class="ri-type">Parked Car</div><div class="ri-loc">Boylston St near Copley</div><div class="ri-time">Mar 25, 6:30 PM</div></div>
+          <div class="report-status expired">Expired</div>
+        </div>
+      </div>
+    </div>
+  </div>
 
-      <button class="eval-submit-btn" onclick="submitEval()">Submit Evaluation</button>
+  <!-- ===== SCREEN: ALERT PREFERENCES ===== -->
+  <div class="screen" id="screen-alerts">
+    <div class="status-bar"><span>9:41</span><span>⦿ LTE</span></div>
+    <div class="top-nav">
+      <button class="back-btn" onclick="goTo('screen-home')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <div class="logo">Alert <span>Preferences</span></div>
+      <div style="width:40px"></div>
+    </div>
+    <div class="page-content">
+      <div class="page-title">Notifications</div>
+      <div class="card">
+        <div class="card-title">Intersection Warnings</div>
+        <div class="toggle-row">
+          <div><div class="label">Intersection Alerts</div><div class="sublabel">Warn when approaching unsafe intersections</div></div>
+          <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+        </div>
+        <div class="toggle-row">
+          <div><div class="label">Alert Sensitivity</div><div class="sublabel">When to show warnings</div></div>
+          <select class="setting-select"><option>High-Risk Only</option><option>All Intersections</option><option>Off</option></select>
+        </div>
+        <div class="toggle-row">
+          <div><div class="label">Voice Warnings</div><div class="sublabel">Audio alerts during navigation</div></div>
+          <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Obstruction Alerts</div>
+        <div class="toggle-row">
+          <div><div class="label">Route Obstructions</div><div class="sublabel">Alert for obstructions on your route</div></div>
+          <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+        </div>
+        <div class="toggle-row">
+          <div><div class="label">Nearby Obstructions</div><div class="sublabel">Alert for obstructions near you</div></div>
+          <div class="toggle" onclick="this.classList.toggle('on')"></div>
+        </div>
+        <div class="toggle-row">
+          <div><div class="label">Auto-Dismiss Popups</div><div class="sublabel">Dismiss alerts after 8 seconds</div></div>
+          <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Community</div>
+        <div class="toggle-row">
+          <div><div class="label">Report Confirmations</div><div class="sublabel">Others verified your report</div></div>
+          <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+        </div>
+        <div class="toggle-row">
+          <div><div class="label">Weekly Safety Digest</div><div class="sublabel">Summary of your area's safety</div></div>
+          <div class="toggle" onclick="this.classList.toggle('on')"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== SCREEN: SETTINGS ===== -->
+  <div class="screen" id="screen-settings">
+    <div class="status-bar"><span>9:41</span><span>⦿ LTE</span></div>
+    <div class="top-nav">
+      <button class="back-btn" onclick="goTo('screen-home')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <div class="logo">Settings</div>
+      <div style="width:40px"></div>
+    </div>
+    <div class="page-content">
+      <div class="page-title">General</div>
+      <div class="card">
+        <div class="card-title">Map & Navigation</div>
+        <div class="toggle-row">
+          <div><div class="label">Dark Mode Map</div><div class="sublabel">Easier on eyes at night</div></div>
+          <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+        </div>
+        <div class="toggle-row">
+          <div><div class="label">Auto-Reroute</div><div class="sublabel">Reroute around new obstructions</div></div>
+          <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+        </div>
+        <div class="toggle-row">
+          <div><div class="label">Distance Units</div></div>
+          <select class="setting-select"><option>Miles</option><option>Kilometers</option></select>
+        </div>
+        <div class="toggle-row">
+          <div><div class="label">Default Route Priority</div></div>
+          <select class="setting-select"><option>Safest</option><option>Fastest</option><option>Balanced</option></select>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Privacy & Data</div>
+        <div class="toggle-row">
+          <div><div class="label">Location Services</div><div class="sublabel">Required for navigation</div></div>
+          <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+        </div>
+        <div class="toggle-row">
+          <div><div class="label">Anonymous Reporting</div><div class="sublabel">Hide your name on reports</div></div>
+          <div class="toggle" onclick="this.classList.toggle('on')"></div>
+        </div>
+        <div class="toggle-row">
+          <div><div class="label">Share Ride Data</div><div class="sublabel">Help improve safety data</div></div>
+          <div class="toggle on" onclick="this.classList.toggle('on')"></div>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">Account</div>
+        <div class="toggle-row" style="cursor:pointer;" onclick="goTo('screen-profile')">
+          <div><div class="label">Edit Profile</div></div>
+          <span style="color:var(--text-muted);">›</span>
+        </div>
+        <div class="toggle-row" style="cursor:pointer;" onclick="goTo('screen-alerts')">
+          <div><div class="label">Notification Preferences</div></div>
+          <span style="color:var(--text-muted);">›</span>
+        </div>
+        <div class="toggle-row" style="cursor:pointer;">
+          <div><div class="label">Download My Data</div></div>
+          <span style="color:var(--text-muted);">›</span>
+        </div>
+      </div>
+      <div class="card">
+        <div class="card-title">About</div>
+        <div class="toggle-row"><div><div class="label">Version</div></div><span style="color:var(--text-muted);font-size:14px;">1.0.0 (beta)</span></div>
+        <div class="toggle-row"><div><div class="label">Terms of Service</div></div><span style="color:var(--text-muted);">›</span></div>
+        <div class="toggle-row"><div><div class="label">Privacy Policy</div></div><span style="color:var(--text-muted);">›</span></div>
+      </div>
+      <button class="logout-btn">Log Out</button>
+    </div>
+  </div>
+
+  <!-- ===== SCREEN: HELP ===== -->
+  <div class="screen" id="screen-help">
+    <div class="status-bar"><span>9:41</span><span>⦿ LTE</span></div>
+    <div class="top-nav">
+      <button class="back-btn" onclick="goTo('screen-home')"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="15 18 9 12 15 6"/></svg></button>
+      <div class="logo">Help</div>
+      <div style="width:40px"></div>
+    </div>
+    <div class="page-content">
+      <div class="page-title">Help & Support</div>
+
+      <div class="card">
+        <div class="card-title">Frequently Asked Questions</div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">How do I report an obstruction?<span class="arrow">▾</span></div>
+          <div class="faq-a">From the home screen, tap the red "Report Obstruction" button at the bottom of the map. Your GPS location is detected automatically. Select the type of obstruction, optionally add a photo or adjust the pin, and hit Submit. The whole process takes under 10 seconds.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">How does safe routing work?<span class="arrow">▾</span></div>
+          <div class="faq-a">BonVoyage uses crowdsourced obstruction reports and historical intersection safety data to calculate routes. When you search for a destination, we show multiple route options ranked by safety. Each route shows the number of active obstructions and dangerous intersections.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">What do the safety ratings mean?<span class="arrow">▾</span></div>
+          <div class="faq-a">Intersections are rated 1–5 based on cyclist-reported incidents, infrastructure quality (protected signals, bike lanes), and historical accident data. 1-2 stars means high risk, 3 is moderate, and 4-5 means the intersection is well-designed for cyclists.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">When do reports expire?<span class="arrow">▾</span></div>
+          <div class="faq-a">Delivery vehicle and parked car reports expire after 2 hours. Construction reports last 24 hours. All reports can be confirmed or dismissed by other cyclists, which affects their visibility and lifespan.</div>
+        </div>
+        <div class="faq-item" onclick="toggleFaq(this)">
+          <div class="faq-q">How do I reduce alert fatigue?<span class="arrow">▾</span></div>
+          <div class="faq-a">Go to Alert Preferences from the sidebar menu. You can set intersection warnings to "High-Risk Only" so you're only alerted for the most dangerous spots. You can also toggle voice warnings on or off and enable auto-dismiss for popup alerts.</div>
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-title">Contact Us</div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div><div class="cr-text">Email Support</div><div class="cr-sub">support@bonvoyage.app</div></div>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 11.5a8.38 8.38 0 01-.9 3.8 8.5 8.5 0 01-7.6 4.7 8.38 8.38 0 01-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 01-.9-3.8 8.5 8.5 0 014.7-7.6 8.38 8.38 0 013.8-.9h.5a8.48 8.48 0 018 8v.5z"/></svg>
+          <div><div class="cr-text">Send Feedback</div><div class="cr-sub">Help us improve BonVoyage</div></div>
+        </div>
+        <div class="contact-row">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M18 13v6a2 2 0 01-2 2H5a2 2 0 01-2-2V8a2 2 0 012-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+          <div><div class="cr-text">Community Forum</div><div class="cr-sub">Connect with other Boston cyclists</div></div>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -1571,22 +1598,17 @@
 
 <script>
   let currentScreen = 'screen-home';
-  let issueCount = 1;
 
   function goTo(id) {
     const current = document.getElementById(currentScreen);
     const next = document.getElementById(id);
     if (!next || id === currentScreen) return;
-
     current.classList.remove('active');
     current.classList.add('slide-left');
     setTimeout(() => current.classList.remove('slide-left'), 300);
-
     next.classList.add('active');
     next.scrollTop = 0;
     currentScreen = id;
-
-    // Reset popup if going to nav
     if (id === 'screen-nav') {
       const popup = document.getElementById('obstructionPopup');
       popup.classList.add('show');
@@ -1616,86 +1638,11 @@
     document.getElementById('obstructionPopup').classList.remove('show');
   }
 
-  function addEvalEntry() {
-    issueCount++;
-    const html = `
-      <div class="eval-entry" style="background:var(--surface);border-radius:var(--radius);padding:16px;margin-bottom:12px;">
-        <div class="eval-group">
-          <label>Issue #${issueCount} — Which heuristic is violated?</label>
-          <select>
-            <option value="">Select heuristic...</option>
-            <option>H1: Visibility of system status</option>
-            <option>H2: Match between system & real world</option>
-            <option>H3: User control & freedom</option>
-            <option>H4: Consistency & standards</option>
-            <option>H5: Error prevention</option>
-            <option>H6: Recognition rather than recall</option>
-            <option>H7: Flexibility & efficiency of use</option>
-            <option>H8: Aesthetic & minimalist design</option>
-            <option>H9: Help users recognize/recover from errors</option>
-            <option>H10: Help & documentation</option>
-          </select>
-        </div>
-        <div class="eval-group">
-          <label>Where in the interface?</label>
-          <input type="text" placeholder="e.g., Report form, Route selection...">
-        </div>
-        <div class="eval-group">
-          <label>Describe the problem</label>
-          <textarea placeholder="What did you observe?"></textarea>
-        </div>
-        <div class="eval-group">
-          <label>Severity (0–4)</label>
-          <select>
-            <option value="">Select...</option>
-            <option>0 — Not a usability problem</option>
-            <option>1 — Cosmetic only</option>
-            <option>2 — Minor usability problem</option>
-            <option>3 — Major usability problem</option>
-            <option>4 — Usability catastrophe</option>
-          </select>
-        </div>
-        <div class="eval-group">
-          <label>Suggested fix (optional)</label>
-          <textarea placeholder="How would you fix this?"></textarea>
-        </div>
-      </div>
-    `;
-    document.getElementById('evalEntries').insertAdjacentHTML('beforeend', html);
-    // Scroll to bottom
-    document.querySelector('#screen-eval .eval-screen').scrollTop = 99999;
-  }
-
-  function submitEval() {
-    // Collect all data
-    const entries = document.querySelectorAll('.eval-entry');
-    let output = 'BONVOYAGE HEURISTIC EVALUATION\n';
-    output += '==============================\n';
-    output += 'Evaluator: ' + (document.getElementById('evalName')?.value || 'Anonymous') + '\n\n';
-
-    entries.forEach((entry, i) => {
-      if (i === 0) return; // Skip name entry
-      const selects = entry.querySelectorAll('select');
-      const inputs = entry.querySelectorAll('input');
-      const textareas = entry.querySelectorAll('textarea');
-      output += `Issue ${i}:\n`;
-      output += `  Heuristic: ${selects[0]?.value || 'N/A'}\n`;
-      output += `  Location: ${inputs[0]?.value || 'N/A'}\n`;
-      output += `  Problem: ${textareas[0]?.value || 'N/A'}\n`;
-      output += `  Severity: ${selects[1]?.value || 'N/A'}\n`;
-      output += `  Fix: ${textareas[1]?.value || 'N/A'}\n\n`;
-    });
-
-    // Download as text file
-    const blob = new Blob([output], { type: 'text/plain' });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement('a');
-    a.href = url;
-    a.download = 'bonvoyage-eval-' + (document.getElementById('evalName')?.value || 'anonymous').replace(/\s+/g, '-').toLowerCase() + '.txt';
-    a.click();
-    URL.revokeObjectURL(url);
-
-    alert('Evaluation downloaded! Thank you for your feedback.');
+  function toggleFaq(el) {
+    const answer = el.querySelector('.faq-a');
+    const arrow = el.querySelector('.arrow');
+    answer.classList.toggle('open');
+    arrow.classList.toggle('open');
   }
 </script>
 
